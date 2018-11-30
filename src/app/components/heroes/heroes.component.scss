@@ -21,10 +21,28 @@
       color: #888;
       text-decoration: none;
       position: relative;
-      display: block;
+      display: inline-block;
       width: 250px;
       &:hover {
         color:#607D8B;
+      }
+    }
+    button {
+      background-color: #eee;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: hand;
+      font-family: Arial sans-serif;
+      &:hover {
+        background-color: #cfd8dc;
+      }
+      &.delete {
+        position: relative;
+        left: 194px;
+        top: -32px;
+        background-color: gray;
+        color: white;
       }
     }
   }
