@@ -1,11 +1,11 @@
 <h2>Heroes</h2>
 
-<div>
+<div class="action-area">
   <label>Hero name:
     <input #heroName />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button class="add" (click)="add(heroName.value); heroName.value=''">
     add
   </button>
 </div>
@@ -15,6 +15,15 @@
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
-    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+    <button class="delete" title="Delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
+
+<app-popup-confirmation
+  *ngIf="heroToDelete"
+  confTitle="Delete confirmation"
+  confText="Do you really want to kill {{heroToDelete.name}}?"
+  [confirm]="onDeleteConfirmed"
+  [decline]="onDeleteDeclined"
+>
+</app-popup-confirmation>

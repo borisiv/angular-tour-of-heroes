@@ -11,6 +11,19 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
 
+  heroToDelete: Hero;
+
+  onDeleteConfirmed = () => {
+    this.heroService.deleteHero(this.heroToDelete).subscribe(() => {
+      this.heroes = this.heroes.filter(h => h.id !== this.heroToDelete.id);
+      this.heroToDelete = null;
+    });
+  }
+
+  onDeleteDeclined = () => {
+    this.heroToDelete = null;
+  }
+
   constructor(private heroService: HeroService) { }
 
   initHeroes(): void {
@@ -31,9 +44,7 @@ export class HeroesComponent implements OnInit {
   }
 
   delete(hero: Hero): void {
-    this.heroService.deleteHero(hero).subscribe(() => {
-      this.heroes = this.heroes.filter(h => h.id !== hero.id);
-    });
+    this.heroToDelete = hero;
   }
 
 }

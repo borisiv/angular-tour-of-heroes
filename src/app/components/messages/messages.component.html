@@ -1,5 +1,8 @@
-<div *ngIf="messages.length">
-  <h2>Messages</h2>
-  <button class="clear" (click)="clear()">clear</button>
-  <div *ngFor="let message of messages">{{message}}</div>
+<h2>Messages</h2>
+<button *ngIf="messages.length" class="clear" (click)="clear()">clear</button>
+<ol *ngIf="messages.length" class="msg-container">
+  <li *ngFor="let message of messages">{{message}}</li>
+</ol>
+<div *ngIf="!messages.length">
+  There are no messages yet
 </div>
