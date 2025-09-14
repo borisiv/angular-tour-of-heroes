@@ -1,3 +1,6 @@
+## Linting
+
+Run `npx eslint . --ext .ts` to lint the project using ESLint.
 # AngularTourOfHeroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
@@ -20,7 +23,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npx cypress open` to execute the end-to-end tests via [Cypress](https://www.cypress.io/).
 
 ## Further help
 
